@@ -5,16 +5,15 @@
  */
 package pkg80striviagame;
 
-import TriviaGame.model.Location;
-import TriviaGame.model.Player;
-import TriviaGame.model.Scene;
-import TriviaGame.model.TriviaQuestions;
+import triviagame.model.Player;
+
+
 
 /**
  *
  * @author carri_000
  */
-public class Main {
+public class TriviaGame {
    
 
     /**
@@ -29,9 +28,7 @@ public class Main {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
        
-        TriviaQuestions triviaquestions = new TriviaQuestions();
-        Location location = new Location();
-        Scene scene = new Scene();
+   
         
     }
      
