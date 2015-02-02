@@ -5,7 +5,9 @@
  */
 package pkg80striviagame;
 
+import javax.tools.JavaFileManager.Location;
 import triviagame.model.Player;
+import triviagame.model.TriviaQuestions;
 
 
 
@@ -27,6 +29,10 @@ public class TriviaGame {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        
+        TriviaQuestions triviaquestions = new TriviaQuestions();
+        
        
    
         
