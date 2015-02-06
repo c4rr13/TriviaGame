@@ -5,8 +5,10 @@
  */
 package pkg80striviagame;
 
-import javax.tools.JavaFileManager.Location;
+
+import TriviaGame.model.Location;
 import triviagame.model.Player;
+import TriviaGame.model.Scene;
 import triviagame.model.TriviaQuestions;
 
 
@@ -32,7 +34,8 @@ public class TriviaGame {
         
         
         TriviaQuestions triviaquestions = new TriviaQuestions();
-        
+       Location location = new Location();
+       Scene scene = new Scene();
        
    
         
