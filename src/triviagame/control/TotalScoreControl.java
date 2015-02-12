@@ -10,18 +10,19 @@ package triviagame.control;
  * @author carri_000
  */
 public class TotalScoreControl {
-    public double TotalScore(SavedScore,Points)
-            if (SavedScore < 0) {
+    public double TotalScore( double SavedScore, double Points) {
+        
+            if (Points < 0 || Points > 1500 ){
             return -1;
                     }
-if (Points < 0 ){
-return -1;
-}
+            if (SavedScore < 0 || SavedScore > 1500) {
+             return -1;
+                    }
 
-TotalScore = SavedScore + Points;
+double TotalScore = SavedScore + Points;
     
 return TotalScore;
 
 
-    
+    }
 }
