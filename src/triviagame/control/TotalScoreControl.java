@@ -10,19 +10,23 @@ package triviagame.control;
  * @author carri_000
  */
 public class TotalScoreControl {
-    public double TotalScore( double SavedScore, double Points) {
+    public double TotalScore( double CountryScore, double PopScore, double RockScore) {
         
-            if (Points < 0 || Points > 1500 ){
+            if (CountryScore < 0 || CountryScore > 1500 ){
             return -1;
                     }
-            if (SavedScore < 0 || SavedScore > 1500) {
+            if (PopScore < 0 || PopScore > 1500) {
              return -1;
                     }
+            if (RockScore < 0 || RockScore > 1500) {
+                return -1;
+            }
 
-double TotalScore = SavedScore + Points;
+double TotalScore = CountryScore + PopScore + RockScore;
     
 return TotalScore;
 
 
     }
 }
+
