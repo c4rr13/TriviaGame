@@ -10,6 +10,7 @@ import TriviaGame.model.Location;
 import triviagame.model.Player;
 import TriviaGame.model.Scene;
 import triviagame.model.TriviaQuestions;
+import triviagame.view.StartProgramView;
 
 
 
@@ -24,6 +25,10 @@ public class TriviaGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
+        
         Player playerOne = new Player();
         
         playerOne.setName("Carrie Taylor");
