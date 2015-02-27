@@ -33,8 +33,8 @@ public void startProgram() {
     this.displayWelcomeMessage(player);
     
     //Display the Menu
-    
-    
+    MainMenuView mainMenu = new MainMenuView();
+    mainMenu.displayMenu();
 }
 
     private void displayBanner() {

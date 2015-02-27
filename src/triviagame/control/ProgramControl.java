@@ -5,6 +5,7 @@
  */
 package triviagame.control;
 
+import pkg80striviagame.TriviaGame;
 import triviagame.model.Player;
 
 /**
@@ -14,8 +15,21 @@ import triviagame.model.Player;
 public class ProgramControl {
 
     public static Player createPlayer(String playersName) {
-        System.out.println("\n**** createPlayer function called ****");
-        return null;
+        if (playersName == null) {
+            return null;
+        }
+        Player player = new Player();
+        player.setName(playersName);
+        
+        TriviaGame.setPlayer(player);
+        return player;
     }
+
+    public static void createNewGame(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
     
 }

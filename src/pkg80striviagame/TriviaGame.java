@@ -9,6 +9,7 @@ package pkg80striviagame;
 import TriviaGame.model.Location;
 import triviagame.model.Player;
 import TriviaGame.model.Scene;
+import triviagame.model.Game;
 import triviagame.model.TriviaQuestions;
 import triviagame.view.StartProgramView;
 
@@ -20,7 +21,9 @@ import triviagame.view.StartProgramView;
  */
 public class TriviaGame {
    
-
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */
@@ -45,9 +48,28 @@ public class TriviaGame {
    
         
     }
-     
-     
-    
-    
-}
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+    
+    public static void setCurrentGame(Game currentGame) {
+        TriviaGame.currentGame = currentGame;
+    }
+    
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TriviaGame.player = player;
+    }
+
+       
+   
+        
+    }
+     
+     
+    
+    
