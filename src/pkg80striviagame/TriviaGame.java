@@ -43,7 +43,7 @@ public class TriviaGame {
         
         TriviaQuestions triviaquestions = new TriviaQuestions();
        Location location = new Location();
-       Scene scene = new Scene();
+       Scene scene = new Scene(); 
        
    
         
