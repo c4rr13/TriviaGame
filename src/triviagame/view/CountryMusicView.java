@@ -5,17 +5,18 @@
  */
 package triviagame.view;
 
+
 import java.util.Scanner;
 
 /**
  *
  * @author carri_000
  */
-public class PopMusicView {
+public class CountryMusicView {
     
     private final String MENU = "\n"
                 + "\n-----------------------------"
-                + "\n| Pop Music Menu                 |"
+                + "\n| Country Music Menu                 |"
                 + "\n-----------------------------"
                 + "\nG - Resume Game"
                 + "\nH - Get Help"
@@ -33,7 +34,7 @@ public class PopMusicView {
       
         char selection = ' ';
         do {
-            System.out.println(MENU); //display the Pop Music Menu
+            System.out.println(MENU); //display the Country Music Menu
             
             String input = this.getInput(); //get users selection
             selection = input.charAt(0); //get first character of string
