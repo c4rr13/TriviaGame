@@ -6,11 +6,10 @@
 package pkg80striviagame;
 
 
-import TriviaGame.model.Location;
+
+
 import triviagame.model.Player;
-import TriviaGame.model.Scene;
 import triviagame.model.Game;
-import triviagame.model.TriviaQuestions;
 import triviagame.view.StartProgramView;
 
 
@@ -23,6 +22,7 @@ public class TriviaGame {
    
     private static Game currentGame = null;
     private static Player player = null;
+
     
     /**
      * @param args the command line arguments
@@ -39,15 +39,9 @@ public class TriviaGame {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
-        
-        
-        TriviaQuestions triviaquestions = new TriviaQuestions();
-       Location location = new Location();
-       Scene scene = new Scene(); 
-       
-   
-        
+          
     }
+  
 
     public static Game getCurrentGame() {
         return currentGame;
