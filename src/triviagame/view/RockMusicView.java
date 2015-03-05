@@ -5,20 +5,21 @@
  */
 package triviagame.view;
 
-
 /**
  *
  * @author carri_000
  */
+
+
 import java.util.Scanner;
 import triviagame.control.GameControl;
 
-public class PopMusicView extends View {
+public class RockMusicView extends View {
 
-    public PopMusicView(String promptMessage) {
+    public RockMusicView(String promptMessage) {
         super("\n"
                 + "\n-----------------------------"
-                + "\n| Pop Music Menu                 |"
+                + "\n| Rock Music Menu                 |"
                 + "\n-----------------------------"
                 + "\nG - Resume Game"
                 + "\nH - Get Help"
@@ -79,5 +80,3 @@ public class PopMusicView extends View {
 
     
     
-
-
