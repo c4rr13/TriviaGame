@@ -5,6 +5,8 @@
  */
 package triviagame.control;
 
+import triviagame.model.Game;
+import triviagame.model.Map;
 import triviagame.model.Player;
 
 /**
@@ -14,6 +16,16 @@ import triviagame.model.Player;
  */
 public class GameControl {
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game(); //create new game
+        
+        
+        game.setPlayer(player);// save player in game
+        
+        Map map = MapControl.createMap(); //create and initialize new map
+        game.setMap(map);//save map in game
+        
+      //move actors to starting position in the map
+        MapControl.moveActorsToStartingLocation(map);
     }
 }

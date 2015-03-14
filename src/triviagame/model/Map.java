@@ -16,8 +16,15 @@ public class Map implements Serializable {
     
     private String rowCount;
     private double rowColumn;
+    private int noOfRows;
+    private int noOfColumns;
+    private Location [][] locations;
 
     public Map() {
+    }
+
+    public Map(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

@@ -5,69 +5,39 @@
  */
 package triviagame.model;
 
+import java.awt.Point;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author whitbillman
  */
-public class Actor implements Serializable {
+public enum Actor implements Serializable {
     
-    private String name;
-    private double appearance;
+    Ryan, Seacrest("He is the celebrity game show host."),
+    Steven, Tyler("He is the lead singer of areosmith and an 80's Rock Legend."),
+    Reba, McEntire("She is an 80's Country Singer"),
+    Michael, Jackson("He is an 80's Pop legend");
+   
+   
+
+    private final Point coordinates;
+    private final String description;
     
-    
-    public Actor() {
+    Actor(String description){
+        this.description = description;
+        coordinates = new Point(1,1);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getAppearance() {
-        return appearance;
-    }
-
-    public void setAppearance(double appearance) {
-        this.appearance = appearance;
-    }
-
-    @Override
-    public String toString() {
-        return "Actor{" + "name=" + name + ", appearance=" + appearance + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.name);
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.appearance) ^ (Double.doubleToLongBits(this.appearance) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.appearance) != Double.doubleToLongBits(other.appearance)) {
-            return false;
-        }
-        return true;
-    }
- 
-    
-    
+   public String getDescription(){
+          return description;
 }
+
+   public Point getCoordinates(){
+          return coordinates;
+}
+
+}
+    
+
+    

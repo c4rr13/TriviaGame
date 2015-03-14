@@ -5,23 +5,70 @@
  */
 package triviagame.model;
 
-import java.io.Serializable;
+
 import java.util.Objects;
+import java.io.Serializable;
+import triviagame.model.Map;
+import triviagame.model.Player;
 
 /**
  *
- * @author whitbillman
+ * @author carri_000
  */
 public class Game implements Serializable {
     
+    private double totalTime;
+    private long noPeople;
+    private Player player;
+    private String[] actors;
+    private Map map;
     private String time;
     private double winner;
 
-    public Game() {
+
+      public Game(){
+      }  
+     
+    public double getTotalTime() {
+        return totalTime;
+    }
+
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
+    }
+
+    public String[] getActors() {
+        return actors;
+    }
+
+    public void setActors(String[] actors) {
+        this.actors = actors;
+    }
+
+    public long getNoPeople() {
+        return noPeople;
+    }
+
+    public void setNoPeople(long noPeople) {
+        this.noPeople = noPeople;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
     
-    
-
     public String getTime() {
         return time;
     }

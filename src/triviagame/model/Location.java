@@ -6,6 +6,7 @@
 package TriviaGame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Location implements Serializable{
@@ -14,6 +15,11 @@ public class Location implements Serializable{
     private String rowCount;
     private String rowColumn;
     private String progress;
+    private int row;
+    private int column;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public Location() {
     }
