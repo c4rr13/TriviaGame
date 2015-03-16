@@ -71,7 +71,7 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         //Create new Game
-        GameControl.createNewGame(80sTriviaGame.getPlayer());
+  
         
         //Display the Game Menu
         GameMenuView gameMenu = new GameMenuView();

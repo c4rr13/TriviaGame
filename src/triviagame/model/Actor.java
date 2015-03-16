@@ -14,10 +14,10 @@ import java.io.Serializable;
  */
 public enum Actor implements Serializable {
     
-    Ryan, Seacrest("He is the celebrity game show host."),
-    Steven, Tyler("He is the lead singer of areosmith and an 80's Rock Legend."),
-    Reba, McEntire("She is an 80's Country Singer"),
-    Michael, Jackson("He is an 80's Pop legend");
+    RyanSeacrest("He is the celebrity game show host."),
+    StevenTyler("He is the lead singer of areosmith and an 80's Rock Legend."),
+    RebaMcEntire("She is an 80's Country Singer"),
+    MichaelJackson("He is an 80's Pop legend");
    
    
 
@@ -36,6 +36,10 @@ public enum Actor implements Serializable {
    public Point getCoordinates(){
           return coordinates;
 }
+
+    public void setDescription(String he_is_the_celebrity_game_show_host) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
     
