@@ -84,6 +84,10 @@ public class Location implements Serializable{
     public void setProgress(String progress) {
         this.progress = progress;
     }
+
+    public Object getScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

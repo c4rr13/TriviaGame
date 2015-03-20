@@ -5,6 +5,7 @@
  */
 package triviagame.control;
 
+import exceptions.MapControlException;
 import triviagame.model.Game;
 import triviagame.model.Map;
 import triviagame.model.Player;
@@ -15,7 +16,7 @@ import triviagame.model.Player;
  * 
  */
 public class GameControl {
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         
         Game game = new Game(); //create new game
         

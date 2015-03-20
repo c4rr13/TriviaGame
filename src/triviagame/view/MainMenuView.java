@@ -5,8 +5,12 @@
  */
 package triviagame.view;
 
+import exceptions.MapControlException;
+import java.awt.Point;
 import java.util.Scanner;
 import triviagame.control.GameControl;
+import triviagame.control.MapControl;
+import triviagame.model.Actor;
 
 /**
  *
@@ -88,6 +92,19 @@ public class MainMenuView extends View {
 
     private void saveGame() {
         System.out.println("\n*** saveGame function called ***");
+    }
+
+    public boolean doAction(String choice) {
+        Actor actor = null;
+        //move actor to specified location
+        try {
+            Point coordinates = null;
+            MapControl.moveActorToLocation(actor, coordinates);
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
+        return false;
+        
     }
 
     @Override
