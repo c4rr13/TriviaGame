@@ -21,7 +21,7 @@ public class MainMenuView extends View {
     
   
 
-    public MainMenuView(String promptMessage) {
+    public MainMenuView() {
         
         super(  "\n"
                 + "\n-----------------------------"
@@ -35,7 +35,7 @@ public class MainMenuView extends View {
     
  
     }
-     
+   
     private Object gamemenu;
     private Object TriviaGame; 
 
@@ -75,7 +75,10 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         //Create new Game
-  
+        //int value = GameControl.createNewGame(TriviaGame.getPlayer());
+        //if (value < 0) {
+        //    System.out.println("ERROR - Failed to create new game")
+        //}
         
         //Display the Game Menu
         GameMenuView gameMenu = new GameMenuView();
@@ -93,8 +96,9 @@ public class MainMenuView extends View {
     private void saveGame() {
         System.out.println("\n*** saveGame function called ***");
     }
-
-    public boolean doAction(String choice) {
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
         Actor actor = null;
         //move actor to specified location
         try {
@@ -107,11 +111,7 @@ public class MainMenuView extends View {
         
     }
 
-    @Override
-    public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
+    
         
         
     }

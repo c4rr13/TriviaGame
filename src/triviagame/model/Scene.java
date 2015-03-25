@@ -4,14 +4,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TriviaGame.model;
+package triviagame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
- * @author carri_000
+ * @author whitbillman
  */
 public class Scene implements Serializable{
     
@@ -56,6 +56,37 @@ public class Scene implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+    public enum SceneType {
+        line,
+        start,
+        popconcert,
+        rockconcert,
+        countryconcert,
+        backstage,
+        greenroom, 
+        finish
+      }
+    
+    
+    
+    
+    
+    
+    
+    public void setMapSymbol(String _st_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTravelTime(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     
 

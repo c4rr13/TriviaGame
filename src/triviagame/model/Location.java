@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TriviaGame.model;
+package triviagame.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -86,6 +86,11 @@ public class Location implements Serializable{
     }
 
     public Object getScene() {
+        return null;
+        
+}
+
+    public void setScene(Scene scene) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

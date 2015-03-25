@@ -12,6 +12,7 @@ import triviagame.model.Player;
 /**
  *
  * @author carri_000
+ * @author whitbillman
  */
 public class StartProgramView {
     
@@ -33,7 +34,8 @@ public void startProgram() {
     this.displayWelcomeMessage(player);
     
     //Display the Menu
-
+    MainMenuView mainMenuView = new MainMenuView();
+    mainMenuView.display();
 }
 
     private void displayBanner() {

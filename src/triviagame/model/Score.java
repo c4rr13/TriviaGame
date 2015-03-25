@@ -20,8 +20,8 @@ public class Score implements Serializable {
     public Score() {
     }
     
-   
-
+    
+    
     public String getTopScore() {
         return topScore;
     }
@@ -37,7 +37,12 @@ public class Score implements Serializable {
     public void setCurrentScore(double currentScore) {
         this.currentScore = currentScore;
     }
-
+    
+    
+    
+    
+    
+   
     @Override
     public String toString() {
         return "Score{" + "topScore=" + topScore + ", currentScore=" + currentScore + '}';
@@ -71,6 +76,9 @@ public class Score implements Serializable {
     
     
     
+
+    
+
     
     
 }

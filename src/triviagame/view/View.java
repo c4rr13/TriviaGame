@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author carri_000
+ * @author carri_000 
  */
   public abstract class View implements ViewInterface {
       private String promptMessage;

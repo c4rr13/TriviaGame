@@ -14,6 +14,7 @@ import triviagame.model.Player;
 /**
  *
  * @author carri_000
+ * @author whitbillman
  */
 public class Game implements Serializable {
     

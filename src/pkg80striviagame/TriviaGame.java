@@ -59,8 +59,16 @@ public class TriviaGame {
         TriviaGame.player = player;
     }
 
-       
-   
+
+          
+          //  try {
+            //create StartProgramView and start the program
+          //  startProgramView.display();
+       // } catch (throwable te) {
+         //   System.out.printlin(te,getMessage());
+        //    te.printStackTrace();
+        //    startProgramView.display();
+       // }
         
     }
      
