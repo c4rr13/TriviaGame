@@ -15,6 +15,7 @@ import triviagame.model.Player;
  * @author whitbillman
  */
 public class StartProgramView {
+    private Object keyboard;
     
 
 public StartProgramView() {
@@ -57,15 +58,12 @@ public void startProgram() {
     private String getPlayersName() {
         boolean valid = false; // indicates if the name has been recieved
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input stream
-        
-        while(!valid) { //while a valid name has not been recieved 
-            
-            //prompt for the player's name
-            System.out.println("Enter the Player's name below:");
+        try {
+            //while a valid name has not been recieved 
+            while(!valid) { 
             
             //get the name from the keyboard and trim off the blanks
-            playersName = keyboard.nextLine();
+            playersName = this.keyboard.readine();
             playersName = playersName.trim();
             
             // if the name is invalid (less than two character in length))
@@ -76,6 +74,9 @@ public void startProgram() {
             break; // out of the (exit) the repetition
             
         }
+    } catch (Exception e) {
+        System.out.println("Error reading input: " + e.getMessage());
+    }
         return playersName; //return the name
     }
 

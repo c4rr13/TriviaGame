@@ -5,56 +5,65 @@
  */
 package triviagame.view;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import pkg80striviagame.TriviaGame;
 
 /**
  *
- * @author carri_000 
+ * @author whitbillman 
  */
   public abstract class View implements ViewInterface {
       private String promptMessage;
+      
+      protected final BufferedReader keyboard = TriviaGame.getInFile();
+      protected final PrintWriter console = TriviaGame.getOutFile();
       
       public View(String promptMessage) {
           this.promptMessage = promptMessage;
       }
       
-      @Override
+      
       public void display() {
           String value;
+          boolean done = false;
+          
           do {
               
-              System.out.println(this.promptMessage);
+              this.console.println(this.promptMessage);
               value = this.getInput();
               this.doAction(value);
               
-          } while (!value.equals("0"));
+          } while (!done);
       }
+      
       @Override
        public String getInput() {
         boolean valid = false;
         String selection = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input stream
-        
-        while(!valid) { //while a valid name has not been recieved 
+        try {
+            //while a valid name has not been recieved 
+            while(!valid) { 
             
-          
-            System.out.println("Enter tyour selection below:");
-            
-            
-            selection = keyboard.nextLine();
+            //get the value entered from the keyboard
+            selection = keyboard.readLine();
             selection = selection.trim();
             
             
             if (selection.length() < 1) {
-                System.out.println("Invalid name - the name must not be blank");
+                ErrorView.display(this.getClass().getName(), 
+                                "Invalid name - the name must not be blank");
                 continue; 
             }
             break; 
-            
-        }
+          }  
+      } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),
+                             "Error reading input: " + e.getMessage());
+      }
        
-          return selection;
-       }
+          return selection; //return the name
+}
        
        public String promptMessage() {
            return promptMessage;

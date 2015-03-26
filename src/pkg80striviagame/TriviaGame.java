@@ -8,6 +8,10 @@ package pkg80striviagame;
 
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import triviagame.model.Player;
 import triviagame.model.Game;
 import triviagame.view.StartProgramView;
@@ -16,29 +20,60 @@ import triviagame.view.StartProgramView;
 
 /**
  *
- * @author carri_000
+ * @author whitbillman
  */
 public class TriviaGame {
    
     private static Game currentGame = null;
     private static Player player = null;
 
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
-    /**
-     * @param args the command line arguments
-     */
+    private static PrintWriter logFile = null;
+   
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
+        try {
+            //open character stream files for end user input and output
+            TriviaGame.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            
+            TriviaGame.outFile = new PrintWriter(System.out, true);
+            
+            //open log file
+            String filePath = "log.txt";
+            TriviaGame.logFile = new PrintWriter(filePath);
+            
+            //create StartProgramView and start the program
+            StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
         
-        Player playerOne = new Player();
+        } catch (Throwable e) {
+            System.out.println("Exception: " + e.toString() +
+                                "\nCause: " + e.getCause() +
+                                "\nMessage: " + e.getMessage());
+            
+          e.printStackTrace();;
+           
+       }
         
-        playerOne.setName("Carrie Taylor");
-        playerOne.setBestTime(7.00);
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
+       finally {
+           try {
+                if (TriviaGame.inFile != null)
+                    TriviaGame.inFile.close();
+                
+                if (TriviaGame.outFile != null)
+                    TriviaGame.outFile.close();
+                
+                if (TriviaGame.logFile != null)
+                    TriviaGame.logFile.close();
+                
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+        } 
           
     }
   
@@ -58,17 +93,30 @@ public class TriviaGame {
     public static void setPlayer(Player player) {
         TriviaGame.player = player;
     }
+    
+    public static PrintWriter getOutFile(){
+        return outFile;
+    }
+    
+    public static void setOutFile(PrintWriter outFile) {
+        TriviaGame.outFile = outFile;
+    }
+    
+    public static BufferedReader getInFile(){
+        return inFile;
+    }
+    
+    public static void setInFile(BufferedReader inFile){
+        TriviaGame.inFile = inFile;
+    }
 
-
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
           
-          //  try {
-            //create StartProgramView and start the program
-          //  startProgramView.display();
-       // } catch (throwable te) {
-         //   System.out.printlin(te,getMessage());
-        //    te.printStackTrace();
-        //    startProgramView.display();
-       // }
+    public static void setLogFile(PrintWriter logFile) {
+        TriviaGame.logFile = logFile;
+    }      
         
     }
      
