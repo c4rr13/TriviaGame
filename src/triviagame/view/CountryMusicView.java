@@ -48,7 +48,8 @@ public class CountryMusicView extends View {
             case 'E': // exit the game
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
             }
         }
@@ -60,11 +61,11 @@ public class CountryMusicView extends View {
        
 
     private void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu function called ***");
+       ErrorView.display(this.getClass().getName(),"\n*** displayHelpMenu function called ***");
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
+       ErrorView.display(this.getClass().getName(),"\n*** saveGame function called ***");
     }
 
     @Override

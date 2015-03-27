@@ -31,7 +31,7 @@ public class GameMenuView {
                 break;
             
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
             }
 }
@@ -45,7 +45,7 @@ public class GameMenuView {
     }
 
     private void displayMap() {
-        System.out.println("\n*** displayMenu stub function called ***");
+        ErrorView.display(this.getClass().getName(),"\n*** displayMenu stub function called ***");
         
     }
 

@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import triviagame.model.Player;
 import triviagame.model.Game;
+import triviagame.view.ErrorView;
 import triviagame.view.StartProgramView;
 
 
@@ -46,11 +47,28 @@ public class TriviaGame {
             TriviaGame.logFile = new PrintWriter(filePath);
             
             //create StartProgramView and start the program
-            StartProgramView startProgramView = new StartProgramView();
+            StartProgramView startProgramView = new StartProgramView() {
+
+                @Override
+                public void display() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public String getInput() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public boolean doAction(Object obj) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
         startProgramView.startProgram();
         
         } catch (Throwable e) {
-            System.out.println("Exception: " + e.toString() +
+           ErrorView.display(this.getClass().getName(), 
+                                "Exception: " + e.toString() +
                                 "\nCause: " + e.getCause() +
                                 "\nMessage: " + e.getMessage());
             
@@ -70,7 +88,8 @@ public class TriviaGame {
                     TriviaGame.logFile.close();
                 
             } catch (IOException ex) {
-                System.out.println("Error closing files");
+               ErrorView.display(this.getClass().getName(),
+                        "Error closing files");
                 return;
             }
         } 

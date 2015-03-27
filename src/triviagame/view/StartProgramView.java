@@ -5,18 +5,31 @@
  */
 package triviagame.view;
 
+import java.io.BufferedReader;
 import java.util.Scanner;
 import triviagame.control.ProgramControl;
 import triviagame.model.Player;
+import java.io.PrintWriter; 
+import pkg80striviagame.TriviaGame;
+import triviagame.view.ErrorView;
 
 /**
  *
  * @author carri_000
  * @author whitbillman
  */
-public class StartProgramView {
-    private Object keyboard;
-    
+
+public abstract class StartProgramView implements ViewInterface {  private String promptMessage;
+      
+      protected final BufferedReader keyboard = TriviaGame.getInFile();
+      protected final PrintWriter console = TriviaGame.getOutFile();
+      
+      public StartProgramView(String promptMessage) {
+          this.promptMessage = promptMessage;
+      
+
+      }
+  
 
 public StartProgramView() {
         
@@ -40,18 +53,18 @@ public void startProgram() {
 }
 
     private void displayBanner() {
-        System.out.println("n/n***************************************");
+        this.console.println("n/n***************************************");
         
-        System.out.println("*                                                                *"
+        this.console.println("*                                                                *"
                 + "\n* Welcome to 80's Music Trivia Game!                                    *");
-        System.out.println("*                                                                *"
+        this.console.println("*                                                                *"
                 + "\n* in this game you will be asked a series of questions about 80's music *"
                 + "\n* Make your way through 3 levels to be the Ulimate 80's Music Fan       *"
                 + "\n* The three levels are 80's Country, 80's Pop, and 80's Rock            *");
-        System.out.println("*                                                                *"
+        this.console.println("*                                                                *"
                 + "\n* Good Luck and enjoy the game!                                         *"
                 + "\n*                                                                       *");
-        System.out.println("******************************************************************");
+        this.console.println("******************************************************************");
         
     }
 
@@ -68,23 +81,24 @@ public void startProgram() {
             
             // if the name is invalid (less than two character in length))
             if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
+                ErrorView.display(this.getClass().getName(),
+                       "Invalid name - the name must not be blank" );
                 continue; //and repeat again
             }
             break; // out of the (exit) the repetition
             
         }
     } catch (Exception e) {
-        System.out.println("Error reading input: " + e.getMessage());
+        ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
     }
         return playersName; //return the name
     }
 
     private void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n================================================");
-        System.out.println("\tWelcome to the game " + player.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("====================================================");
+        this.console.println("\n\n================================================");
+        this.console.println("\tWelcome to the game " + player.getName());
+        this.console.println("\tWe hope you have a lot of fun!");
+        this.console.println("====================================================");
         
                 
     }

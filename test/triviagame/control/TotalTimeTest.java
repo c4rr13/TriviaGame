@@ -22,7 +22,7 @@ public class TotalTimeTest {
      */
     @Test
     public void testTotalTime() {
-        System.out.println("TotalTime");
+        this.console.println("TotalTime");
         double CountryTime = 0.0;
         double PopTime = 0.0;
         double RockTime = 0.0;

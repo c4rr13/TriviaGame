@@ -68,7 +68,7 @@ public class MainMenuView extends View {
             case 'E': // exit the game
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+              ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
             }
         }
@@ -77,7 +77,7 @@ public class MainMenuView extends View {
         //Create new Game
         //int value = GameControl.createNewGame(TriviaGame.getPlayer());
         //if (value < 0) {
-        //    System.out.println("ERROR - Failed to create new game")
+        //   ErrorView.display(this.getClass().getName(),"ERROR - Failed to create new game")
         //}
         
         //Display the Game Menu
@@ -86,15 +86,35 @@ public class MainMenuView extends View {
     }
 
     private void startExsistingGame() {
-        System.out.println("\n*** startExsistingGame function called ***");
+        this.console.println( "\n\nEnter the file path for file where the game is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+            //Start a saved game
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        //Display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu function called ***");
+       this.console.println("\n*** displayHelpMenu function called ***");
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
+        this.console.println("\n\nEnter the file path for file where the game"
+                                 + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(80sTriviaGame.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
     @Override
     public boolean doAction(Object obj) {
@@ -105,7 +125,7 @@ public class MainMenuView extends View {
             Point coordinates = null;
             MapControl.moveActorToLocation(actor, coordinates);
         } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
         return false;
         

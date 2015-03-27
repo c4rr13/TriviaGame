@@ -106,12 +106,12 @@ public class MapControl {
     public static void moveActorToLocation(Actor actor, Point coordinates) 
                             throws MapControlException {
         
-       // Map map = 80sTriviaGame.getCurrentGame().getMap();
+       Map map = 80sTriviaGame.getCurrentGame().getMap();
         int newRow = coordinates.x-1;
         int newColumn = coordinates.y-1;
         
-       // if (newRow < 0 || newRow >= map.getNoOfRows() ||
-       //     newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+        if (newRow < 0 || newRow >= map.getNoOfRows() ||
+           newColumn < 0 || newColumn >= map.getNoOfColumns()) {
             throw new MapControlException("Can not move actor to location"
                                         + coordinates.x +", " + coordinates.y
                                         + "because that location is outside "
