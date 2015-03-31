@@ -5,16 +5,27 @@
  */
 package triviagame.control;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pkg80striviagame.TriviaGame;
+import triviagame.view.ViewInterface;
 
 /**
  *
  * @author whitbillman
  */
-public class TotalTimeTest {
+public abstract class TotalTimeTest implements ViewInterface {
+    private final String promptMessage;
     
-    public TotalTimeTest() {
+    protected final BufferedReader keyboard = TriviaGame.getInFile();
+    protected final PrintWriter console = TriviaGame.getOutFile();
+    
+    
+    
+    public TotalTimeTest(String promptMessage) {
+        this.promptMessage = promptMessage;
     }
 
     /**

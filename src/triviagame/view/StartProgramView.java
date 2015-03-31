@@ -76,7 +76,7 @@ public void startProgram() {
             while(!valid) { 
             
             //get the name from the keyboard and trim off the blanks
-            playersName = this.keyboard.readine();
+            playersName = this.keyboard.readLine();
             playersName = playersName.trim();
             
             // if the name is invalid (less than two character in length))

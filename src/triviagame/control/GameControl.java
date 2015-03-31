@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import triviagame.model.Game;
 import triviagame.model.Map;
 import triviagame.model.Player;
@@ -22,6 +23,7 @@ import triviagame.model.Player;
  * 
  */
 public class GameControl {
+    private static Object IOHelper;
     public static void createNewGame(Player player) throws MapControlException {
         
         Game game = new Game(); //create new game
@@ -47,7 +49,7 @@ public class GameControl {
         }
     }
 
-    
+   
 
     private static class GameControlException extends Exception {
 

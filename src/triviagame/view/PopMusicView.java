@@ -10,6 +10,7 @@ package triviagame.view;
  *
  * @author carri_000
  */
+import java.io.PrintWriter;
 import java.util.Scanner;
 import triviagame.control.GameControl;
 

@@ -106,7 +106,7 @@ public class MapControl {
     public static void moveActorToLocation(Actor actor, Point coordinates) 
                             throws MapControlException {
         
-       Map map = 80sTriviaGame.getCurrentGame().getMap();
+       Map map = pkg80striviagame.TriviaGame.getCurrentGame().getMap();
         int newRow = coordinates.x-1;
         int newColumn = coordinates.y-1;
         
@@ -117,7 +117,9 @@ public class MapControl {
                                         + "because that location is outside "
                                         +" the bounds of the map.");
            
-        }
-    
+        } 
     }
+}
+    
+    
 
