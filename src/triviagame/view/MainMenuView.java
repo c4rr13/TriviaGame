@@ -79,10 +79,10 @@ public class MainMenuView extends View {
         }
 
     private void startNewGame() {
-        //Create new Game
-       int value = GameControl.createNewGame(TriviaGame.getPlayer());
+       int value;
+        value = GameControl.createNewGame();
        if (value < 0) {
-           ErrorView.display(this.getClass().getName(),"ERROR - Failed to create new game")
+           ErrorView.display(this.getClass().getName(),"ERROR - Failed to create new game");
         }
         
         //Display the Game Menu
@@ -150,6 +150,10 @@ public class MainMenuView extends View {
         //Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+    }
+
+    private void ReportControl(String filePath) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      
     }

@@ -67,10 +67,10 @@ public class TriviaGame {
         startProgramView.startProgram();
         
         } catch (Throwable e) {
-           ErrorView.display(this.getClass().getName(), 
-                                "Exception: " + e.toString() +
-                                "\nCause: " + e.getCause() +
-                                "\nMessage: " + e.getMessage());
+        //   ErrorView.display(this.getClass().getName(), 
+                        //        "Exception: " + e.toString() +
+                        //        "\nCause: " + e.getCause() +
+                        //        "\nMessage: " + e.getMessage());
             
           e.printStackTrace();;
            
@@ -88,8 +88,8 @@ public class TriviaGame {
                     TriviaGame.logFile.close();
                 
             } catch (IOException ex) {
-               ErrorView.display(this.getClass().getName(),
-                        "Error closing files");
+            //   ErrorView.display(this.getClass().getName(),
+             //           "Error closing files");
                 return;
             }
         } 
